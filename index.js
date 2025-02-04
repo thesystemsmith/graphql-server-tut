@@ -29,6 +29,15 @@ const resolvers = {
     randomNumber: () => Math.round(Math.random() * 10),
     queryUsers: () => users,
   },
+
+  //this is a mutation that is resolved to create data here
+  //name matches the typeDef name
+  Mutation:{
+    addUser: (parent, args) => {
+        users.push(args)
+        return args
+      }
+  }
 };
 
 //datastore
