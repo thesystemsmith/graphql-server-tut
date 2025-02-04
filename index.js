@@ -14,9 +14,12 @@ const typeDefs = gql`
     randomNumber: Int!
     queryUsers: [User]!
   }
+
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!): User!
+  }
 `;
-// the Query type outlines all the queries that can be called by the client
-// The exclamation mark (!) tells Apollo Server that a result is required
+
 
 // When a query is called a resolver with the same name is run, The API returns whatever is returned by the resolver
 const resolvers = {
